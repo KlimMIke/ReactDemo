@@ -1,0 +1,5 @@
+{
+  "name": "ReactDemo",
+  "main": "main.js",
+  "browserify": {"transform": ["reactify"]}
+}
