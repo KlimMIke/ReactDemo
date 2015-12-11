@@ -1,5 +1,10 @@
 {
   "name": "ReactDemo",
   "main": "main.js",
-  "browserify": {"transform": ["reactify"]}
+  "browserify": {"transform": ["reactify"]},
+  "dependencies": {
+    "reactify": "*",
+    "react": "~0.14.3",
+    "react-dom": "~0.14.3"
+  }
 }
