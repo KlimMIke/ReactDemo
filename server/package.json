@@ -1,0 +1,8 @@
+{
+  "name": "ReactDemoServer",
+  "repository" :
+  { "type" : "git",
+	"url" : "https://github.com/mixaildudin/ReactDemo"
+  },
+  "main": "server.js"
+}

@@ -1,6 +1,10 @@
 {
-  "name": "ReactDemo",
+  "name": "ReactDemoClient",
   "main": "main.js",
+  "repository" :
+  { "type" : "git",
+	"url" : "https://github.com/mixaildudin/ReactDemo"
+  },
   "browserify": {"transform": ["reactify"]},
   "dependencies": {
     "reactify": "*",
