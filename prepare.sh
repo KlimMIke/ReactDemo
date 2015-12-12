@@ -1,8 +1,10 @@
-npm i -g browserify
+npm i -g browserify #install browserify globally
 
-cd client
+# install dependencies for the server
 npm i
 
-cd .. # to avoid slashes
-cd server
+# install dependencies for the client
+cd client
+# to help npm understand that we want everything installed here
+mkdir node_modules
 npm i
