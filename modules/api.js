@@ -15,6 +15,29 @@ module.exports = function(request, response) {
         response.setHeader('Content-type', 'application/json');
         response.end(JSON.stringify(card));
     }
+    else if (request.url == '/api/check' && request.method.toUpperCase() == 'POST') {
+        var body = '';
+
+        request.on('data', function(chunk) { body += chunk; })
+        request.on('end', function() {
+            var data;
+            try {
+                data = JSON.parse(body);
+            } catch (e) {
+                response.statusCode = 400;
+                response.end('Invalid JSON');
+                return;
+            }
+
+            var found = cards.filter(function(c) {
+                return c.eng == data.eng;
+            });
+
+            response.statusCode = 200;
+            response.setHeader('Content-type', 'application/json');
+            response.end(JSON.stringify({ correct: found.length > 0 && found[0].rus == data.rus }));
+        });
+    }
     else {
         response.statusCode = 400;
         response.end('Method not found');
