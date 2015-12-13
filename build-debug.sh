@@ -1,0 +1,1 @@
+browserify client/scripts/main.js -o client/bundle.js --debug
