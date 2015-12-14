@@ -1,4 +1,7 @@
 var http = require('http');
 var router = require('./modules/router');
 
-http.createServer(router).listen(8080);
+var PORT = 8080;
+http.createServer(router).listen(PORT);
+
+console.log('Server is running! Go to http://localhost:' + PORT + ' to see your app');

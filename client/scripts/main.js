@@ -1,7 +1,8 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
+var Field = require('./react_compoments/Field');
 
 ReactDOM.render(
-    <h1>Hello, world!</h1>,
+    <Field />,
     document.getElementById('container')
 );

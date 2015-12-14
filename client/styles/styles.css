@@ -1,0 +1,12 @@
+.card, .failed-guesses {
+    width: 200px;
+    height: auto;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.field {
+    padding: 10px;
+    border: 1px solid grey;
+    display: inline-block;
+}
