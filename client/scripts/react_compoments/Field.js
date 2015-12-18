@@ -7,7 +7,6 @@ var FailedGuesses = require('./FailedGuesses');
 
 module.exports = React.createClass({
     getInitialState: function() {
-        // this.state.card = {}
         return { currentCard: { eng: '', rus: '' } };
     },
 
@@ -26,10 +25,18 @@ module.exports = React.createClass({
         })
     },
 
+    handleUserAnswer: function(isCorrect) {
+        if (!isCorrect) {
+            
+        }
+
+        this.getNextCard();
+    },
+
     render: function() {
         return (
             <div className="field">
-                <Card cardToDisplay={this.state.currentCard} />
+                <Card cardToDisplay={this.state.currentCard} onAnswer={this.handleUserAnswer} />
                 <div className="currentScore">
                     Score will be here
                 </div>
