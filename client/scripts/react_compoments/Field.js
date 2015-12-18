@@ -37,7 +37,6 @@ module.exports = React.createClass({
             wrongAnswers[word] = true;
         }
 
-        this.setState({ wrongAnswers: wrongAnswers });
         this.getNextCard();
     },
 
@@ -48,7 +47,7 @@ module.exports = React.createClass({
                 <div className="currentScore">
                     Score will be here
                 </div>
-                <FailedGuesses />
+                <FailedGuesses wrongAnswers={this.state.wrongAnswers} />
             </div>
         );
     }
