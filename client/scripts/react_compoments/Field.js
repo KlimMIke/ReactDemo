@@ -7,7 +7,10 @@ var FailedGuesses = require('./FailedGuesses');
 
 module.exports = React.createClass({
     getInitialState: function() {
-        return { currentCard: { eng: '', rus: '' } };
+        return {
+            currentCard: { eng: '', rus: '' },
+            wrongAnswers: {}
+        };
     },
 
     componentDidMount: function() {
@@ -25,11 +28,16 @@ module.exports = React.createClass({
         })
     },
 
-    handleUserAnswer: function(isCorrect) {
-        if (!isCorrect) {
-            
+    handleUserAnswer: function(isCorrect, word) {
+        var wrongAnswers = this.state.wrongAnswers;
+
+        if (isCorrect) {
+            delete wrongAnswers[word];
+        } else {
+            wrongAnswers[word] = true;
         }
 
+        this.setState({ wrongAnswers: wrongAnswers });
         this.getNextCard();
     },
 
