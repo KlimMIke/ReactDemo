@@ -1,14 +1,19 @@
 {
   "name": "ReactDemoClient",
   "main": "main.js",
-  "repository" :
-  { "type" : "git",
-	"url" : "https://github.com/mixaildudin/ReactDemo"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mixaildudin/ReactDemo"
   },
-  "browserify": {"transform": ["reactify"]},
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
   "dependencies": {
-    "reactify": "*",
+    "jquery": "^2.1.4",
     "react": "~0.14.3",
-    "react-dom": "~0.14.3"
+    "react-dom": "~0.14.3",
+    "reactify": "*"
   }
 }

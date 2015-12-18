@@ -1,5 +1,6 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
+var $ = require('jquery');
 
 var Card = require('./Card');
 var FailedGuesses = require('./FailedGuesses');
@@ -7,7 +8,25 @@ var FailedGuesses = require('./FailedGuesses');
 module.exports = React.createClass({
     getInitialState: function() {
         // this.state.card = {}
-        return { currentCard: { eng: 'asdf', rus: 'zxcv' } };
+        return { currentCard: { eng: '', rus: '' } };
+    },
+
+    componentDidMount: function() {
+        setInterval(this.getNextCard, 1000);
+    },
+
+    getNextCard: function() {
+        $.ajax({
+            url: this.props.nextCardUrl,
+            dataType: 'json',
+            type: 'GET',
+            success: function(newCard) {
+                this.setState({ currentCard: newCard });
+            }.bind(this),
+            error: function() {
+                console.warn('Something\' wrong');
+            }
+        })
     },
 
     render: function() {
@@ -22,5 +41,3 @@ module.exports = React.createClass({
         );
     }
 });
-
-// this.state.card
