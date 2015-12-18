@@ -2,9 +2,13 @@ var React = require('react');
 
 module.exports = React.createClass({
     checkAnswer: function(currentCard) {
-        if (currentCard.eng == currentCard.rus) {
-            alert('correct');
+        if (this.state.answer == currentCard.rus) {
+            alert('correct')
         }
+    },
+
+    getInitialState: function() {
+        return { answer: '' };
     },
 
     handleAnswerChange: function(event) {
@@ -18,7 +22,7 @@ module.exports = React.createClass({
             <div className="card">
                 <span>{currentCard.eng}</span><br/>
                 <input type="text" onChange={this.handleAnswerChange} />
-                <button>Ответить</button>
+                <button onClick={this.checkAnswer.bind(this, currentCard)}>Ответить</button>
             </div>
         );
     }
