@@ -12,7 +12,7 @@ module.exports = React.createClass({
     },
 
     componentDidMount: function() {
-        setInterval(this.getNextCard, 1000);
+        this.getNextCard();
     },
 
     getNextCard: function() {
@@ -22,10 +22,7 @@ module.exports = React.createClass({
             type: 'GET',
             success: function(newCard) {
                 this.setState({ currentCard: newCard });
-            }.bind(this),
-            error: function() {
-                console.warn('Something\' wrong');
-            }
+            }.bind(this)
         })
     },
 

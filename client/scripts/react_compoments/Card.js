@@ -7,7 +7,8 @@ module.exports = React.createClass({
         return (
             <div className="card">
                 <span>{currentCard.eng}</span><br/>
-                <span>{currentCard.rus}</span><br/>
+                <input type="test" />
+                <button>Ответить</button>
             </div>
         );
     }
