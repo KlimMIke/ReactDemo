@@ -45,9 +45,6 @@ module.exports = React.createClass({
         return (
             <div className="field">
                 <Card cardToDisplay={this.state.currentCard} onAnswer={this.handleUserAnswer} />
-                <div className="currentScore">
-                    Score will be here
-                </div>
                 <FailedGuesses wrongAnswers={this.state.wrongAnswers} />
             </div>
         );
