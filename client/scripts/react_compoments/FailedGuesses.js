@@ -7,15 +7,15 @@ module.exports = React.createClass({
         return (
             <div className="failed-guesses">
                 <span>Words you didn't know:</span><br/>
+                <ul>
                 {
                     Object.keys(wrongAnswers).map(function(wa) {
                         return (
-                            <ul>
-                                <li>{wa}</li>
-                            </ul>
+                            <li key={Math.random()}>{wa}</li>
                         );
                     })
                 }
+                </ul>
 
             </div>
         );

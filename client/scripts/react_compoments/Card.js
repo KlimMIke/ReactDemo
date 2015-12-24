@@ -3,7 +3,7 @@ var React = require('react');
 module.exports = React.createClass({
     checkAnswer: function(currentCard) {
         var onAnswer = this.props.onAnswer;
-        onAnswer(this.state.answer == currentCard.rus, currentCard.eng);
+        onAnswer(this.state.answer == currentCard.rus);
         this.setState({ answer: '' });
     },
 

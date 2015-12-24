@@ -28,8 +28,9 @@ module.exports = React.createClass({
         })
     },
 
-    handleUserAnswer: function(isCorrect, word) {
+    handleUserAnswer: function(isCorrect) {
         var wrongAnswers = this.state.wrongAnswers;
+        var word = this.state.currentCard.eng;
 
         if (isCorrect) {
             delete wrongAnswers[word];
