@@ -1,4 +1,7 @@
-// Module to handle api requests
+/* This module handles api requests.
+*  TODO: return images or add support on the client side
+*  TODO: remove answer checking from here since it's been moved to the client side to make the app simpler
+*/
 
 var cards = require('./cards');
 
@@ -15,6 +18,7 @@ module.exports = function(request, response) {
         response.setHeader('Content-type', 'application/json');
         response.end(JSON.stringify(card));
     }
+	
     else if (request.url == '/api/check' && request.method.toUpperCase() == 'POST') {
         var body = '';
 
@@ -38,6 +42,7 @@ module.exports = function(request, response) {
             response.end(JSON.stringify({ correct: found.length > 0 && found[0].rus == data.rus }));
         });
     }
+
     else {
         response.statusCode = 400;
         response.end('Method not found');

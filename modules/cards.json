@@ -8,5 +8,29 @@
     "eng": "dog",
     "rus": "собака",
     "imgName": null
+  },
+  {
+    "eng": "book",
+    "rus": "книга"
+  },
+  {
+    "eng": "table",
+    "rus": "стол"
+  },
+  {
+    "eng": "man",
+    "rus": "мужчина"
+  },
+  {
+    "eng": "woman",
+    "rus": "женщина"
+  },
+  {
+    "eng": "life",
+    "rus": "жизнь"
+  },
+  {
+    "eng": "phone",
+    "rus": "телефон"
   }
 ]
