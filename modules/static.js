@@ -11,7 +11,7 @@ module.exports = function(request, response) {
             response.end(data);
         } else {
             response.statusCode = 404;
-            response.end();
+            response.end('404\nNot found');
         }
     });
-}
+};
